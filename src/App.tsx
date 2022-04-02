@@ -1,10 +1,13 @@
 import "./App.css";
-import { Render } from "./Render";
+import { RenderInput } from "./RenderInput";
 
 function App() {
+  const onClick = (value: string) => {
+    console.log(value);
+  };
   return (
     <div className="App">
-      <Render />
+      <RenderInput onClick={onClick}></RenderInput>
     </div>
   );
 }
