@@ -12,10 +12,18 @@ export const RenderInput: React.VFC<RenderInputProps> = ({ onClick }) => {
 
   return (
     <div>
-      <input type="text" onChange={onChange} value={value} />
+      <input
+        type="text"
+        onChange={onChange}
+        value={value}
+        placeholder="Enter"
+        data-testid="input-area"
+      />
       <button
         onClick={() => {
-          onClick(value);
+          if (value) {
+            onClick(value);
+          }
         }}
       >
         ボタン
