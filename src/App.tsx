@@ -25,6 +25,7 @@ function App() {
     <div className="App">
       {/* <RenderInput onClick={onClick}></RenderInput> */}
       <FrameworkList data={data}></FrameworkList>
+      {/* <FrameworkList ></FrameworkList> */}
     </div>
   );
 }

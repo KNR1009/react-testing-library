@@ -1,24 +1,20 @@
 import React from "react";
 
 type FrameworkListProps = {
-  data:
+  data?:
     | {
         id?: number;
         item?: string;
       }[];
 };
 export const FrameworkList: React.VFC<FrameworkListProps> = ({ data }) => {
-  return data.length === 0 ? (
+  return !data ? (
     <h1>データがありません</h1>
   ) : (
     <div>
       <ul>
         {data.map((item, index) => (
-          <div key={index}>
-            <li>
-              {item.id}:{item.item}
-            </li>
-          </div>
+          <li key={item.id}>{item.item}</li>
         ))}
       </ul>
     </div>
