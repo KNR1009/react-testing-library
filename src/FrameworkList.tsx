@@ -15,8 +15,9 @@ export const FrameworkList: React.VFC<FrameworkListProps> = ({ data }) => {
       <ul>
         {data.map((item, index) => (
           <div key={index}>
-            <li>{item.id}</li>
-            <li>{item.item}</li>
+            <li>
+              {item.id}:{item.item}
+            </li>
           </div>
         ))}
       </ul>
