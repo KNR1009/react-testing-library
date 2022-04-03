@@ -4,29 +4,34 @@ import { FrameworkList } from "./FrameworkList";
 
 afterEach(() => cleanup);
 
-describe("List props", () => {
-  /* propsが入ってない場合に表示されるコンポーネントのテスト */
-  it("Should render No data !", () => {
-    render(<FrameworkList />);
+describe("List Props", () => {
+  // propsが存在しない場合
+  it("should render no date !", () => {
+    render(<FrameworkList></FrameworkList>);
     expect(screen.getByText("データがありません")).toBeInTheDocument();
   });
-  /* propsにデータが入っている場合 */
-  it("Should render data", () => {
-    const dummyDate = [
+  // propsが存在しListComponentが表示される時
+  it("should render data !", () => {
+    const dummy_data = [
       {
         id: 1,
-        item: "React dummy",
+        item: "React_dummy",
       },
       {
         id: 2,
-        item: "vue dummy",
+        item: "Angular_dummy",
+      },
+      {
+        id: 3,
+        item: "Vue_dummy",
       },
     ];
-    render(<FrameworkList data={dummyDate}></FrameworkList>);
+    render(<FrameworkList data={dummy_data}></FrameworkList>);
+    // HTMLで出力されるテキストを取得し配列に格納
     const frameworkItems = screen
       .getAllByRole("listitem")
       .map((ele) => ele.textContent);
-    const dummyItems = dummyDate.map((ele) => ele.item);
+    const dummyItems = dummy_data.map((item) => item.item);
     expect(frameworkItems).toEqual(dummyItems);
   });
 });
