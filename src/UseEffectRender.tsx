@@ -12,5 +12,11 @@ export const UseEffectRender = () => {
     date();
   }, []);
 
-  return user ? <p>{user.name}</p> : <p>データがないです</p>;
+  return user ? (
+    <p>
+      I am {user.name} : {user.email}
+    </p>
+  ) : (
+    <p>データがないです</p>
+  );
 };
