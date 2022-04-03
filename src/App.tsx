@@ -1,7 +1,8 @@
 import "./App.css";
-import { FrameworkList } from "./FrameworkList";
-import { RenderInput } from "./RenderInput";
-import { UseEffectRender } from "./UseEffectRender";
+import { MockServer } from "./MockServer";
+// import { FrameworkList } from "./FrameworkList";
+// import { RenderInput } from "./RenderInput";
+// import { UseEffectRender } from "./UseEffectRender";
 
 function App() {
   // const onClick = (value: string) => {
@@ -27,7 +28,8 @@ function App() {
       {/* <RenderInput onClick={onClick}></RenderInput> */}
       {/* <FrameworkList data={data}></FrameworkList> */}
       {/* <FrameworkList ></FrameworkList> */}
-      <UseEffectRender></UseEffectRender>
+      {/* <UseEffectRender></UseEffectRender> */}
+      <MockServer></MockServer>
     </div>
   );
 }
